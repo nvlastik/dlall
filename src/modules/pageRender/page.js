@@ -121,8 +121,9 @@ export default function (obj) {
     width: 100vw;
     justify-content: center;
     position: absolute;
-    height: 20vh;
-    align-items: center;">
+    max-height: 50vh
+    align-items: center;
+    flex-direction: column;">
     <div id="yandex_rtb_R-A-4533493-3"></div>
     <script>
     window.yaContextCb.push(()=>{
