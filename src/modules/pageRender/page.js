@@ -123,7 +123,7 @@ export default function (obj) {
     position: absolute;
     align-items: center;
     flex-direction: column;">
-    <div id="yandex_rtb_R-A-4533493-3" style="max-height: 40vh;"></div>
+    <div id="yandex_rtb_R-A-4533493-3" style="max-height: 30vh;"></div>
     <script>
     window.yaContextCb.push(()=>{
         Ya.Context.AdvManager.render({
