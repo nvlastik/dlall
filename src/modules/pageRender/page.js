@@ -121,7 +121,7 @@ export default function (obj) {
     width: 100vw;
     justify-content: center;
     position: absolute;
-    max-height: 50vh
+    max-height: 50vh;
     align-items: center;
     flex-direction: column;">
     <div id="yandex_rtb_R-A-4533493-3"></div>
