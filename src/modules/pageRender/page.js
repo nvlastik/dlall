@@ -123,6 +123,7 @@ export default function (obj) {
     position: absolute;
     height: 20vh;
     align-items: center;">
+    <div id="yandex_rtb_R-A-4533493-3"></div>
     <script>
     window.yaContextCb.push(()=>{
         Ya.Context.AdvManager.render({
