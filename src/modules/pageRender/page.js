@@ -74,6 +74,23 @@ export default function(obj) {
         <link rel="me" href="${authorInfo.support.default.mastodon.url}">
 
         <noscript><div style="margin: 2rem;">${t('NoScriptMessage')}</div></noscript>
+        <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(95905279, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/95905279" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
     </head>
     <body id="cobalt-body" ${platform === "d" ? 'class="desktop"' : ''} data-nosnippet ontouchstart>
         <body id="notification-area"></div>
@@ -100,49 +117,49 @@ export default function(obj) {
                             name: "services",
                             title: `${emoji("🔗")} ${t("CollapseServices")}`,
                             body: `${enabledServices}`
-                            + `<div class="explanation embedded">${t("SupportNotAffiliated")}`
-                            + `${obj.lang === "ru" ? `<br>${t("SupportMetaNoticeRU")}` : ''}`
-                            + `</div>`
-                            + `${t("ServicesNote")}`
+                                + `<div class="explanation embedded">${t("SupportNotAffiliated")}`
+                                + `${obj.lang === "ru" ? `<br>${t("SupportMetaNoticeRU")}` : ''}`
+                                + `</div>`
+                                + `${t("ServicesNote")}`
                         }, {
                             name: "keyboard",
                             title: `${emoji("⌨")} ${t("CollapseKeyboard")}`,
-                            body: 
-                            `${t("KeyboardShortcutsIntro")}
+                            body:
+                                `${t("KeyboardShortcutsIntro")}
                             ${keyboardShortcuts([{
-                                items: [{
-                                    combo: "Shift+D",
-                                    name: t("PasteFromClipboard")
+                                    items: [{
+                                        combo: "Shift+D",
+                                        name: t("PasteFromClipboard")
+                                    }, {
+                                        combo: "Shift+K",
+                                        name: t("ModeToggleAuto")
+                                    }, {
+                                        combo: "Shift+L",
+                                        name: t("ModeToggleAudio")
+                                    }]
                                 }, {
-                                     combo: "Shift+K",
-                                     name: t("ModeToggleAuto")
+                                    items: [{
+                                        combo: "Ctrl+V",
+                                        name: t("KeyboardShortcutQuickPaste")
+                                    }, {
+                                        combo: "Esc",
+                                        name: t("KeyboardShortcutClear")
+                                    }, {
+                                        combo: "Esc",
+                                        name: t("KeyboardShortcutClosePopup")
+                                    }]
                                 }, {
-                                     combo: "Shift+L",
-                                     name: t("ModeToggleAudio")
-                                }]
-                            }, {
-                                items: [{
-                                    combo: "Ctrl+V",
-                                    name: t("KeyboardShortcutQuickPaste")
-                                }, {
-                                    combo: "Esc",
-                                    name: t("KeyboardShortcutClear")
-                                }, {
-                                    combo: "Esc",
-                                    name: t("KeyboardShortcutClosePopup")
-                                }]
-                            }, {
-                                items: [{
-                                     combo: "Shift+B",
-                                     name: t("AboutTab")
-                                }, {
-                                     combo: "Shift+N",
-                                     name: t("ChangelogTab")
-                                }, {
-                                    combo: "Shift+M",
-                                    name: t("TitlePopupSettings")
-                                }]
-                            }])}`
+                                    items: [{
+                                        combo: "Shift+B",
+                                        name: t("AboutTab")
+                                    }, {
+                                        combo: "Shift+N",
+                                        name: t("ChangelogTab")
+                                    }, {
+                                        combo: "Shift+M",
+                                        name: t("TitlePopupSettings")
+                                    }]
+                                }])}`
                         }, {
                             name: "privacy",
                             title: `${emoji("🔒")} ${t("CollapsePrivacy")}`,
@@ -170,161 +187,161 @@ export default function(obj) {
                 name: "video",
                 title: `${emoji("🎬")} ${t('SettingsVideoTab')}`,
                 content: settingsCategory({
-                    name: "downloads",
-                    title: t('SettingsQualitySubtitle'),
-                    body: switcher({
-                        name: "vQuality",
-                        explanation: t('SettingsQualityDescription'),
-                        items: [{
-                            action: "max",
-                            text: "8k+"
-                        }, {
-                            action: "2160",
-                            text: "4k"
-                        }, {
-                            action: "1440",
-                            text: "1440p"
-                        }, {
-                            action: "1080",
-                            text: "1080p"
-                        }, {
-                            action: "720",
-                            text: "720p"
-                        }, {
-                            action: "480",
-                            text: "480p"
-                        }, {
-                            action: "360",
-                            text: "360p"
-                        }]
+                        name: "downloads",
+                        title: t('SettingsQualitySubtitle'),
+                        body: switcher({
+                            name: "vQuality",
+                            explanation: t('SettingsQualityDescription'),
+                            items: [{
+                                action: "max",
+                                text: "8k+"
+                            }, {
+                                action: "2160",
+                                text: "4k"
+                            }, {
+                                action: "1440",
+                                text: "1440p"
+                            }, {
+                                action: "1080",
+                                text: "1080p"
+                            }, {
+                                action: "720",
+                                text: "720p"
+                            }, {
+                                action: "480",
+                                text: "480p"
+                            }, {
+                                action: "360",
+                                text: "360p"
+                            }]
+                        })
                     })
-                })
-                + settingsCategory({
-                    name: "tiktok",
-                    title: "tiktok",
-                    body: checkbox([{
-                        action: "disableTikTokWatermark",
-                        name: t("SettingsRemoveWatermark"),
-                        padding: "no-margin"
-                    }])
-                })
-                + settingsCategory({
-                    name: "codec",
-                    title: t('SettingsCodecSubtitle'),
-                    body: switcher({
-                        name: "vCodec",
-                        explanation: t('SettingsCodecDescription'),
-                        items: [{
-                            action: "h264",
-                            text: "h264 (mp4)"
-                        }, {
-                            action: "av1",
-                            text: "av1 (mp4)"
-                        }, {
-                            action: "vp9",
-                            text: "vp9 (webm)"
-                        }]
+                    + settingsCategory({
+                        name: "tiktok",
+                        title: "tiktok",
+                        body: checkbox([{
+                            action: "disableTikTokWatermark",
+                            name: t("SettingsRemoveWatermark"),
+                            padding: "no-margin"
+                        }])
                     })
-                })
-                + settingsCategory({
-                    name: "vimeo",
-                    title: t('SettingsVimeoPrefer'),
-                    body: switcher({
-                        name: "vimeoDash",
-                        explanation: t('SettingsVimeoPreferDescription'),
-                        items: [{
-                            action: "false",
-                            text: "progressive"
-                        }, {
-                            action: "true",
-                            text: "dash"
-                        }]
+                    + settingsCategory({
+                        name: "codec",
+                        title: t('SettingsCodecSubtitle'),
+                        body: switcher({
+                            name: "vCodec",
+                            explanation: t('SettingsCodecDescription'),
+                            items: [{
+                                action: "h264",
+                                text: "h264 (mp4)"
+                            }, {
+                                action: "av1",
+                                text: "av1 (mp4)"
+                            }, {
+                                action: "vp9",
+                                text: "vp9 (webm)"
+                            }]
+                        })
                     })
-                })
+                    + settingsCategory({
+                        name: "vimeo",
+                        title: t('SettingsVimeoPrefer'),
+                        body: switcher({
+                            name: "vimeoDash",
+                            explanation: t('SettingsVimeoPreferDescription'),
+                            items: [{
+                                action: "false",
+                                text: "progressive"
+                            }, {
+                                action: "true",
+                                text: "dash"
+                            }]
+                        })
+                    })
             }, {
                 name: "audio",
                 title: `${emoji("🎶")} ${t('SettingsAudioTab')}`,
                 content: settingsCategory({
-                    name: "general",
-                    title: t('SettingsFormatSubtitle'),
-                    body: switcher({
-                        name: "aFormat",
-                        explanation: t('SettingsAudioFormatDescription'),
-                        items: audioFormats
+                        name: "general",
+                        title: t('SettingsFormatSubtitle'),
+                        body: switcher({
+                                name: "aFormat",
+                                explanation: t('SettingsAudioFormatDescription'),
+                                items: audioFormats
+                            })
+                            + sep(0)
+                            + checkbox([{
+                                action: "muteAudio",
+                                name: t("SettingsVideoMute"),
+                                padding: "no-margin"
+                            }])
+                            + explanation(t('SettingsVideoMuteExplanation'))
                     })
-                    + sep(0)
-                    + checkbox([{
-                        action: "muteAudio",
-                        name: t("SettingsVideoMute"),
-                        padding: "no-margin"
-                    }])
-                    + explanation(t('SettingsVideoMuteExplanation'))
-                })
-                + settingsCategory({
-                    name: "dub",
-                    title: t("SettingsAudioDub"),
-                    body: switcher({
-                        name: "dubLang",
-                        explanation: t('SettingsAudioDubDescription'),
-                        items: [{
-                            action: "original",
-                            text: t('SettingsDubDefault')
-                        }, {
-                            action: "auto",
-                            text: t('SettingsDubAuto')
-                        }]
+                    + settingsCategory({
+                        name: "dub",
+                        title: t("SettingsAudioDub"),
+                        body: switcher({
+                            name: "dubLang",
+                            explanation: t('SettingsAudioDubDescription'),
+                            items: [{
+                                action: "original",
+                                text: t('SettingsDubDefault')
+                            }, {
+                                action: "auto",
+                                text: t('SettingsDubAuto')
+                            }]
+                        })
                     })
-                })
-                + settingsCategory({
-                    name: "tiktok",
-                    title: "tiktok",
-                    body: checkbox([{
-                        action: "fullTikTokAudio",
-                        name: t("SettingsAudioFullTikTok"),
-                        padding: "no-margin"
-                    }])
-                    + explanation(t('SettingsAudioFullTikTokDescription'))
-                })
+                    + settingsCategory({
+                        name: "tiktok",
+                        title: "tiktok",
+                        body: checkbox([{
+                                action: "fullTikTokAudio",
+                                name: t("SettingsAudioFullTikTok"),
+                                padding: "no-margin"
+                            }])
+                            + explanation(t('SettingsAudioFullTikTokDescription'))
+                    })
             }, {
                 name: "other",
                 title: `${emoji("🪅")} ${t('SettingsOtherTab')}`,
                 content: settingsCategory({
-                    name: "appearance",
-                    title: t('SettingsAppearanceSubtitle'),
-                    body: switcher({
-                        name: "theme",
-                        items: [{
-                            action: "auto",
-                            text: t('SettingsThemeAuto')
-                        }, {
-                            action: "dark",
-                            text: t('SettingsThemeDark')
-                        }, {
-                            action: "light",
-                            text: t('SettingsThemeLight')
-                        }]
+                        name: "appearance",
+                        title: t('SettingsAppearanceSubtitle'),
+                        body: switcher({
+                            name: "theme",
+                            items: [{
+                                action: "auto",
+                                text: t('SettingsThemeAuto')
+                            }, {
+                                action: "dark",
+                                text: t('SettingsThemeDark')
+                            }, {
+                                action: "light",
+                                text: t('SettingsThemeLight')
+                            }]
+                        })
                     })
-                })
-                + settingsCategory({
-                    name: "filename",
-                    title: t('FilenameTitle'),
-                    body: switcher({
-                        name: "filenamePattern",
-                        items: [{
-                            action: "classic",
-                            text: t('FilenamePatternClassic')
-                        }, {
-                            action: "basic",
-                            text: t('FilenamePatternBasic')
-                        }, {
-                            action: "pretty",
-                            text: t('FilenamePatternPretty')
-                        }, {
-                            action: "nerdy",
-                            text: t('FilenamePatternNerdy')
-                        }]
-                    })
-                    + `<div id="filename-preview">
+                    + settingsCategory({
+                        name: "filename",
+                        title: t('FilenameTitle'),
+                        body: switcher({
+                                name: "filenamePattern",
+                                items: [{
+                                    action: "classic",
+                                    text: t('FilenamePatternClassic')
+                                }, {
+                                    action: "basic",
+                                    text: t('FilenamePatternBasic')
+                                }, {
+                                    action: "pretty",
+                                    text: t('FilenamePatternPretty')
+                                }, {
+                                    action: "nerdy",
+                                    text: t('FilenamePatternNerdy')
+                                }]
+                            })
+                            + `<div id="filename-preview">
                         <div id="video-filename" class="filename-item line">
                             ${emoji('🎞️', 32, 1, 1)}
                             <div class="filename-container">
@@ -340,40 +357,40 @@ export default function(obj) {
                             </div>
                         </div>
                     </div>`
-                    + explanation(t('FilenameDescription'))
-                })
-                + settingsCategory({
-                    name: "accessibility",
-                    title: t('Accessibility'),
-                    body: checkbox([{
-                        action: "alwaysVisibleButton",
-                        name: t("SettingsKeepDownloadButton"),
-                        aria: t("AccessibilityKeepDownloadButton")
-                    }, {
-                        action: "reduceTransparency",
-                        name: t("SettingsReduceTransparency")
-                    }, {
-                        action: "disableAnimations",
-                        name: t("SettingsDisableAnimations"),
-                        padding: "no-margin"
-                    }])
-                })
-                + settingsCategory({
-                    name: "miscellaneous",
-                    title: t('Miscellaneous'),
-                    body: checkbox([{
-                        action: "downloadPopup",
-                        name: t("SettingsEnableDownloadPopup"),
-                        aria: t("AccessibilityEnableDownloadPopup")
-                    }, {
-                        action: "disableMetadata",
-                        name: t("SettingsDisableMetadata")
-                    }, {
-                        action: "disableChangelog",
-                        name: t("SettingsDisableNotifications"),
-                        padding: "no-margin"
-                    }])
-                })
+                            + explanation(t('FilenameDescription'))
+                    })
+                    + settingsCategory({
+                        name: "accessibility",
+                        title: t('Accessibility'),
+                        body: checkbox([{
+                            action: "alwaysVisibleButton",
+                            name: t("SettingsKeepDownloadButton"),
+                            aria: t("AccessibilityKeepDownloadButton")
+                        }, {
+                            action: "reduceTransparency",
+                            name: t("SettingsReduceTransparency")
+                        }, {
+                            action: "disableAnimations",
+                            name: t("SettingsDisableAnimations"),
+                            padding: "no-margin"
+                        }])
+                    })
+                    + settingsCategory({
+                        name: "miscellaneous",
+                        title: t('Miscellaneous'),
+                        body: checkbox([{
+                            action: "downloadPopup",
+                            name: t("SettingsEnableDownloadPopup"),
+                            aria: t("AccessibilityEnableDownloadPopup")
+                        }, {
+                            action: "disableMetadata",
+                            name: t("SettingsDisableMetadata")
+                        }, {
+                            action: "disableChangelog",
+                            name: t("SettingsDisableNotifications"),
+                            padding: "no-margin"
+                        }])
+                    })
             }]
         })}
         ${popupWithBottomButtons({
@@ -388,52 +405,52 @@ export default function(obj) {
         })}
         <div id="popup-download-container" class="popup-from-bottom">
             ${popup({
+            name: "download",
+            standalone: true,
+            buttonOnly: true,
+            classes: ["small"],
+            header: {
+                closeAria: t('AccessibilityGoBack'),
+                emoji: emoji("🐱", 78, 1, 1),
+                title: t('TitlePopupDownload')
+            },
+            body: switcher({
                 name: "download",
-                standalone: true,
-                buttonOnly: true,
-                classes: ["small"],
-                header: {
-                    closeAria: t('AccessibilityGoBack'),
-                    emoji: emoji("🐱", 78, 1, 1),
-                    title: t('TitlePopupDownload')
-                },
-                body: switcher({
-                    name: "download",
-                    explanation: `${!isIOS ? t('DownloadPopupDescription') : t('DownloadPopupDescriptionIOS')}`,
-                    items: `<a id="pd-download" class="switch full" target="_blank" href="/"><span>${t('Download')}</span></a>
+                explanation: `${!isIOS ? t('DownloadPopupDescription') : t('DownloadPopupDescriptionIOS')}`,
+                items: `<a id="pd-download" class="switch full" target="_blank" href="/"><span>${t('Download')}</span></a>
                     <div id="pd-share" class="switch full">${t('ShareURL')}</div>
                     <div id="pd-copy" class="switch full">${t('CopyURL')}</div>`
-                }),
-                buttonText: t('PopupCloseDone')
-            })}
+            }),
+            buttonText: t('PopupCloseDone')
+        })}
         </div>
         <div id="popup-error-container" class="popup-from-bottom">
             ${popup({
-                name: "error",
-                standalone: true,
-                buttonOnly: true,
-                classes: ["small"],
-                header: {
-                    title: t('TitlePopupError'),
-                    emoji: emoji("😿", 78, 1, 1),
-                },
-                body: `<div id="desc-error" class="desc-padding subtext desc-error"></div>`,
-                buttonText: t('ErrorPopupCloseButton')
-            })}
+            name: "error",
+            standalone: true,
+            buttonOnly: true,
+            classes: ["small"],
+            header: {
+                title: t('TitlePopupError'),
+                emoji: emoji("😿", 78, 1, 1),
+            },
+            body: `<div id="desc-error" class="desc-padding subtext desc-error"></div>`,
+            buttonText: t('ErrorPopupCloseButton')
+        })}
         </div>
         <div id="popup-migration-container" class="popup-from-bottom">
             ${popup({
-                name: "migration",
-                standalone: true,
-                buttonOnly: true,
-                classes: ["small"],
-                header: {
-                    title: t('NewDomainWelcomeTitle'),
-                    emoji: emoji("😸", 78, 1, 1),
-                },
-                body: `<div id="desc-migration" class="desc-padding subtext desc-error">${t('NewDomainWelcome')}</div>`,
-                buttonText: t('ErrorPopupCloseButton')
-            })}
+            name: "migration",
+            standalone: true,
+            buttonOnly: true,
+            classes: ["small"],
+            header: {
+                title: t('NewDomainWelcomeTitle'),
+                emoji: emoji("😸", 78, 1, 1),
+            },
+            body: `<div id="desc-migration" class="desc-padding subtext desc-error">${t('NewDomainWelcome')}</div>`,
+            buttonText: t('ErrorPopupCloseButton')
+        })}
             <div id="popup-backdrop-message" onclick="popup('message', 0)"></div>
         </div>
         <div id="popup-backdrop" onclick="hideAllPopups()"></div>
@@ -449,57 +466,57 @@ export default function(obj) {
                     <div id="bottom">
                         <button id="paste" class="switch" onclick="pasteClipboard()" aria-label="${t('PasteFromClipboard')}">${emoji("📋", 22)} ${t('PasteFromClipboard')}</button>
                         ${switcher({
-                            name: "audioMode",
-                            noParent: true,
-                            items: [{
-                                action: "false",
-                                text: `${emoji("✨")} ${t("ModeToggleAuto")}`
-                            }, {
-                                action: "true",
-                                text: `${emoji("🎶")} ${t("ModeToggleAudio")}`
-                            }]
-                        })}
+            name: "audioMode",
+            noParent: true,
+            items: [{
+                action: "false",
+                text: `${emoji("✨")} ${t("ModeToggleAuto")}`
+            }, {
+                action: "true",
+                text: `${emoji("🎶")} ${t("ModeToggleAudio")}`
+            }]
+        })}
                     </div>
                 </div>
             </div>
             <footer id="footer">
                 ${footerButtons([{
-                    name: "about",
-                    type: "popup",
-                    text: `${emoji("🐲" , 22)} ${t('AboutTab')}`,
-                    aria: t('AccessibilityOpenAbout')
-                }, {
-                    name: "settings",
-                    type: "popup",
-                    text: `${emoji("⚙️", 22)} ${t('TitlePopupSettings')}`,
-                    aria: t('AccessibilityOpenSettings')
-                }])}
+            name: "about",
+            type: "popup",
+            text: `${emoji("🐲", 22)} ${t('AboutTab')}`,
+            aria: t('AccessibilityOpenAbout')
+        }, {
+            name: "settings",
+            type: "popup",
+            text: `${emoji("⚙️", 22)} ${t('TitlePopupSettings')}`,
+            aria: t('AccessibilityOpenSettings')
+        }])}
             </footer>
         </div>
     </body>
     <script type="text/javascript">
         let defaultApiUrl = '${process.env.apiURL ? process.env.apiURL : ''}';
         const loc = ${webLoc(t,
-        [
-            'ErrorNoInternet',
-            'ErrorNoUrlReturned',
-            'ErrorUnknownStatus',
-            'ChangelogPressToHide',
-            'MediaPickerTitle',
-            'MediaPickerExplanationPhone',
-            'MediaPickerExplanationPC',
-            'ImagePickerTitle',
-            'ImagePickerExplanationPhone',
-            'ImagePickerExplanationPC',
-            'FeatureErrorGeneric',
-            'ClipboardErrorNoPermission',
-            'ClipboardErrorFirefox',
-            'DataTransferSuccess',
-            'DataTransferError',
-            'FilenamePreviewVideoTitle',
-            'FilenamePreviewAudioTitle',
-            'FilenamePreviewAudioAuthor'
-        ])}
+            [
+                'ErrorNoInternet',
+                'ErrorNoUrlReturned',
+                'ErrorUnknownStatus',
+                'ChangelogPressToHide',
+                'MediaPickerTitle',
+                'MediaPickerExplanationPhone',
+                'MediaPickerExplanationPC',
+                'ImagePickerTitle',
+                'ImagePickerExplanationPhone',
+                'ImagePickerExplanationPC',
+                'FeatureErrorGeneric',
+                'ClipboardErrorNoPermission',
+                'ClipboardErrorFirefox',
+                'DataTransferSuccess',
+                'DataTransferError',
+                'FilenamePreviewVideoTitle',
+                'FilenamePreviewAudioTitle',
+                'FilenamePreviewAudioAuthor'
+            ])}
     </script>
     <script type="text/javascript" src="cobalt.js"></script>
 </html>
