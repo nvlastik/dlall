@@ -1,6 +1,24 @@
-import { checkbox, collapsibleList, explanation, footerButtons, multiPagePopup, popup, popupWithBottomButtons, sep, settingsCategory, switcher, socialLink, socialLinks, urgentNotice, keyboardShortcuts, webLoc, sponsoredList, betaTag } from "./elements.js";
-import { services as s, authorInfo, version, repo, donations, supportedAudio } from "../config.js";
-import { getCommitInfo } from "../sub/currentCommit.js";
+import {
+    checkbox,
+    collapsibleList,
+    explanation,
+    footerButtons,
+    multiPagePopup,
+    popup,
+    popupWithBottomButtons,
+    sep,
+    settingsCategory,
+    switcher,
+    socialLink,
+    socialLinks,
+    urgentNotice,
+    keyboardShortcuts,
+    webLoc,
+    sponsoredList,
+    betaTag
+} from "./elements.js";
+import {services as s, authorInfo, version, repo, donations, supportedAudio} from "../config.js";
+import {getCommitInfo} from "../sub/currentCommit.js";
 import loc from "../../localization/manager.js";
 import emoji from "../emoji.js";
 import changelogManager from "../changelog/changelogManager.js";
@@ -14,9 +32,9 @@ let enabledServices = Object.keys(s).filter(p => s[p].enabled).sort().map((p) =>
 let donate = ``
 let donateLinks = ``
 let audioFormats = supportedAudio.map((p) => {
-    return { "action": p }
+    return {"action": p}
 })
-audioFormats.unshift({ "action": "best" })
+audioFormats.unshift({"action": "best"})
 for (let i in donations["links"]) {
     donateLinks += `<a id="don-${i}" class="switch autowidth" href="${donations["links"][i]}" target="_blank">REPLACEME ${i}</a>`
 }
@@ -26,8 +44,10 @@ for (let i in donations["crypto"]) {
     extr = ' top-margin'
 }
 
-export default function(obj) {
-    const t = (str, replace) => { return loc("ru", str, replace) };
+export default function (obj) {
+    const t = (str, replace) => {
+        return loc("ru", str, replace)
+    };
 
     let ua = obj.useragent.toLowerCase();
     let isIOS = ua.match("iphone os");
@@ -91,9 +111,45 @@ export default function(obj) {
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/95905279" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+<!-- Yandex.RTB -->
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>
     </head>
     <body id="cobalt-body" ${platform === "d" ? 'class="desktop"' : ''} data-nosnippet ontouchstart>
-        <a>скачай все что угодно!</a>
+    
+        <div style="display: flex;
+    width: 100vw;
+    justify-content: center;
+    position: absolute;
+    height: 20vh;
+    align-items: center;">
+    <script>
+window.yaContextCb.push(()=>{
+	Ya.Context.AdvManager.render({
+		"blockId": "R-A-4533493-3",
+		"renderTo": "yandex_rtb_R-A-4533493-3"
+	})
+})
+</script>
+        <a>скачай все что угодно без лишних действий!<br/> в лучшем качестве из YouTube, ВК, Inst и других мест</a>
+        </div>
+        <script>
+window.yaContextCb.push(()=>{
+	Ya.Context.AdvManager.render({
+		"blockId": "R-A-4533493-1",
+		"type": "fullscreen",
+		"platform": "desktop"
+	})
+})
+window.yaContextCb.push(()=>{
+	Ya.Context.AdvManager.render({
+		"blockId": "R-A-4533493-2",
+		"type": "fullscreen",
+		"platform": "touch"
+	})
+})
+
+</script>
         <body id="notification-area"></div>
         ${multiPagePopup({
             name: "about",
