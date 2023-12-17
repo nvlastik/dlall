@@ -159,6 +159,7 @@ function expandCollapsible(evnt) {
     !classlist.contains(c) ? classlist.add(c) : classlist.remove(c);
 }
 function notificationCheck(type) {
+    return;
     let changed = true;
     switch (type) {
         case "about":
@@ -203,9 +204,9 @@ function popup(type, action, text) {
         store.isPopupOpen = true;
         switch (type) {
             case "about":
-                let tabId = sGet("changelogStatus") !== `${version}` ? "changelog" : "about";
-                if (text) tabId = text;
-                eid(`tab-button-${type}-${tabId}`).click();
+                // let tabId = sGet("changelogStatus") !== `${version}` ? "changelog" : "about";
+                // if (text) tabId = text;
+                eid(`tab-button-about-about`).click();
                 break;
             case "settings":
                 eid(`tab-button-${type}-video`).click();
