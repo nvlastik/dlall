@@ -27,7 +27,7 @@ for (let i in donations["crypto"]) {
 }
 
 export default function(obj) {
-    const t = (str, replace) => { return loc(obj.lang, str, replace) };
+    const t = (str, replace) => { return loc("ru", str, replace) };
 
     let ua = obj.useragent.toLowerCase();
     let isIOS = ua.match("iphone os");
@@ -93,6 +93,7 @@ export default function(obj) {
 <!-- /Yandex.Metrika counter -->
     </head>
     <body id="cobalt-body" ${platform === "d" ? 'class="desktop"' : ''} data-nosnippet ontouchstart>
+        <a>скачай все что угодно!</a>
         <body id="notification-area"></div>
         ${multiPagePopup({
             name: "about",
