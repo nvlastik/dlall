@@ -144,18 +144,6 @@ export default function(obj) {
                                 }]
                             }])}`
                         }, {
-                            name: "support",
-                            title: `${emoji("❤️‍🩹")} ${t("CollapseSupport")}`,
-                            body: 
-                            `${t("SupportSelfTroubleshooting")}<br/><br/>`
-                            + `${t("FollowSupport")}<br/>`
-                            + `${socialLinks(obj.lang)}<br/>`
-                            + `${t("SourceCode")}<br/>`
-                            + `${socialLink(
-                                emoji("🐙"), "github", repo.replace("https://github.com/", ''), repo
-                            )}<br/>
-                            ${t("SupportNote")}`
-                        }, {
                             name: "privacy",
                             title: `${emoji("🔒")} ${t("CollapsePrivacy")}`,
                             body: t("PrivacyPolicy")
@@ -164,117 +152,6 @@ export default function(obj) {
                             title: `${emoji("📑")} ${t("CollapseLegal")}`,
                             body: t("FairUse")
                         }])
-                    },
-                    ...(process.env.showSponsors ?
-                    [{
-                        text: t("SponsoredBy"),
-                        classes: ["sponsored-by-text"],
-                        nopadding: true
-                    }, {
-                        text: sponsoredList(),
-                        raw: true
-                    }] : []
-                    )]
-                })
-            }, {
-                name: "changelog",
-                title: `${emoji("🎉")} ${t('ChangelogTab')}`,
-                content: popup({
-                    name: "changelog",
-                    header: {
-                        closeAria: t('AccessibilityGoBack'),
-                        title: `${emoji("🪄", 30)} ${t('TitlePopupChangelog')}`
-                    },
-                    body: [{
-                        text: `<div class="category-title">${t('ChangelogLastMajor')}</div>`,
-                        raw: true
-                    }, {
-                        text: changelogManager("banner") ?
-                        `<div class="changelog-banner">
-                            <img class="changelog-img" ` +
-                                `src="${changelogManager("banner")["url"]}" ` +
-                                `width="${changelogManager("banner")["width"]}" ` +
-                                `height="${changelogManager("banner")["height"]}" ` +
-                                `onerror="this.style.opacity=0" loading="lazy">`+
-                            `</img>
-                        </div>`: '',
-                        raw: true
-                    }, {
-                        text: changelogManager("version"),
-                        classes: ["changelog-tags"],
-                        nopadding: true
-                    }, {
-                        text: changelogManager("title"),
-                        classes: ["changelog-subtitle"],
-                        nopadding: true
-                    }, {
-                        text: changelogManager("content")
-                    }, {
-                        text: sep(),
-                        raw: true
-                    },{
-                        text: `<a class="text-backdrop changelog-tag-version" href="${repo}/commit/${obj.hash}">#${obj.hash}</a>`,
-                        classes: ["changelog-tags"],
-                        nopadding: true
-                    }, {
-                        text: com[0],
-                        classes: ["changelog-subtitle"],
-                        nopadding: true
-                    }, {
-                        text: com[1]
-                    }, {
-                        text: `<div class="category-title">${t('ChangelogOlder')}</div>`,
-                        raw: true
-                    }, {
-                        text: `
-                        <div id="changelog-history">
-                            <button class="switch bottom-margin" onclick="loadOnDemand('changelog-history', '0')">${t("ChangelogPressToExpand")}</button>
-                        </div>`,
-                        raw: true
-                    }]
-                })
-            }, {
-                name: "donate",
-                title: `${emoji("💖")} ${t('DonationsTab')}`,
-                content: popup({
-                    name: "donate",
-                    header: {
-                        closeAria: t('AccessibilityGoBack'),
-                        title: emoji("💸", 30) + t('TitlePopupDonate')
-                    },
-                    body: [{
-                        text: `<div class="category-title">${t('DonateSub')}</div>`,
-                        raw: true
-                    }, {
-                        text: `<div class="changelog-banner">
-                            <img class="changelog-img" ` +
-                                `src="updateBanners/catsleep.webp"` +
-                                `width="480" ` +
-                                `height="270" ` +
-                                `onerror="this.style.opacity=0" loading="lazy">`+
-                            `</img>
-                        </div>`,
-                        raw: true
-                    }, {
-                        text: t('DonateExplanation')
-                    }, {
-                        text: donateLinks.replace(/REPLACEME/g, t('DonateVia')),
-                        raw: true
-                    }, {
-                        text: t('DonateLinksDescription'),
-                        classes: ["explanation"]
-                    }, {
-                        text: sep(),
-                        raw: true
-                    }, {
-                        text: donate.replace(/REPLACEME/g, t('ClickToCopy')),
-                        classes: ["desc-padding"]
-                    }, {
-                        text: sep(),
-                        raw: true
-                    }, {
-                        text: t('DonateHireMe', authorInfo.link),
-                        classes: ["desc-padding"]
                     }]
                 })
             }],
@@ -561,12 +438,6 @@ export default function(obj) {
         </div>
         <div id="popup-backdrop" onclick="hideAllPopups()"></div>
         <div id="home" style="visibility:hidden">
-            ${urgentNotice({
-                emoji: "🧮",
-                text: t("UrgentTwitterPatch"),
-                visible: true,
-                action: "popup('about', 1, 'changelog')"
-            })}
             <div id="cobalt-main-box" class="center">
                 <div id="logo">${t("AppTitleCobalt")}${betaTag()}</div>
                 <div id="download-area">
@@ -597,12 +468,6 @@ export default function(obj) {
                     type: "popup",
                     text: `${emoji("🐲" , 22)} ${t('AboutTab')}`,
                     aria: t('AccessibilityOpenAbout')
-                }, {
-                    name: "about",
-                    type: "popup",
-                    context: "donate",
-                    text: `${emoji("💖", 22)} ${t('Donate')}`,
-                    aria: t('AccessibilityOpenDonate')
                 }, {
                     name: "settings",
                     type: "popup",
